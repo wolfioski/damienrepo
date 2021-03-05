@@ -4,7 +4,9 @@ powershell.exe -ExecutionPolicy Bypass -File c:\rh-setup\pscript.ps1
 copy C:\rh-setup\EMRlogin.txt "C:\Program Files (x86)\EMR"
 powershell.exe -ExecutionPolicy Bypass -File c:\rh-setup\scpower.ps1
 start chrome
-timeout /t 20 /nobreak > nul
+timeout /t 4 /nobreak > nul
+taskkill /F /IM chrome.exe /T > nul
+timeout /t 10 /nobreak > nul
 powershell.exe -ExecutionPolicy Bypass -File c:\rh-setup\copycd.ps1
 echo Done and SUCCESFUL!!!!!
 pause
